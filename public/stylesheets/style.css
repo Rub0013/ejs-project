@@ -12,12 +12,33 @@ a:link, a:visited, a:hover, a:active {
   color: black;
 }
 #main_nav{
-  list-style: none;
   width: 20%;
   justify-content: space-between;
   margin: 30px auto;
   font-size: 1.3em;
   font-weight: bold;
+}
+
+#user_info{
+  margin-top: 20px;
+  width: 310px;
+  font-weight: bold;
+  background: rgba(0, 0, 0, 0.71);
+  padding: 10px;
+  border-radius: 2px;
+}
+#user_info>li
+{
+  width: 280px;
+  padding: 5px;
+  background: rgba(95, 158, 160, 0.8);
+  border-radius: 2px;
+  margin: 5px;
+  transition: margin-left 0.2s linear;
+}
+#user_info>li:hover{
+  margin-left: 20px;
+  cursor: pointer;
 }
 
 

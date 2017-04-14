@@ -6,7 +6,20 @@
 </head>
 <body>
     <%- include templates/nav.ejs %>
-    <%= users[0].gender %>
+
+    <h1>Profile</h1>
+    <ul id="user_info" class="list_style_none">
+        <% Object.keys(users).forEach(function(key) {
+        if(key == 'name') { %>
+            <% Object.keys(users[key]).forEach(function(nameKey) { %>
+                <li><%- nameKey %> - <%- users[key][nameKey] %></li>
+            <%});
+        }
+        else if(typeof users[key] != "object") { %>
+        <li><%- key %> - <%- users[key] %></li>
+        <% }
+        }); %>
+    </ul>
 </body>
 <script>
     $(document).ready(function() {
