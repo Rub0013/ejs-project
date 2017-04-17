@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <%- include templates/head-general.ejs %>
+    <script type="text/javascript" src="js/bootstrap-filestyle/src/bootstrap-filestyle.min.js"></script>
+    <title><%= title %></title>
+</head>
+<body>
+<%- include templates/nav.ejs %>
+<div class="col-md-2">
+    <h1><%= title %></h1>
+    <input id="image_file" type="file" class="filestyle">
+    <button id="add_pic_buton" class="btn btn-default">Add</button>
+</div>
+<script type="text/javascript" src="js/add_picture.js"></script>
+</body>
+</html>

@@ -66,15 +66,17 @@ router.post('/insert', function(req, res, next) {
 router.post('/update', function(req, res, next) {});
 router.post('/delete', function(req, res, next) {
     var id = req.body.id;
-    res.send('ok');
-    // mongo.connect(url, function (err, db) {
-    //     assert.equal(null, err);
-    //     db.collection('users').deleteOne({"_id":objectId(id)}, function (err, result) {
-    //         assert.equal(null, err);
-    //         console.log('Item deleted!');
-    //         db.close();
-    //     });
-    // });
+    mongo.connect(url, function (err, db) {
+        assert.equal(null, err);
+        db.collection('users').deleteOne({"_id":objectId(id)}, function (err, result) {
+            assert.equal(null, err);
+            console.log('Item deleted!');
+            db.close();
+            res.send({
+                success:true
+            });
+        });
+    });
 });
 
 module.exports = router;

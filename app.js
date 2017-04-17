@@ -6,13 +6,16 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var expressValidator = require('express-validator');
 var expressSession = require('express-session');
+var fileUpload = require('express-fileupload');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
 var about = require('./routes/about');
+var add_pictures = require('./routes/add_pictures');
+var gallery = require('./routes/gallery');
 
 var app = express();
-
+app.use(fileUpload())
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -29,6 +32,8 @@ app.use(expressSession({secret: 'fff',saveUninitialized:false,resave:false}));
 
 app.use('/', index);
 app.use('/users', users);
+app.use('/add_pictures', add_pictures);
+app.use('/gallery', gallery);
 app.use('/about', about);
 
 // catch 404 and forward to error handler
