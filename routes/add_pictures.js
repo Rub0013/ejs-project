@@ -1,7 +1,6 @@
 var express = require('express');
 var router = express.Router();
 var mongo = require('mongodb').MongoClient;
-var objectId = require('mongodb').ObjectID;
 var assert = require('assert');
 var url = 'mongodb://localhost:27017/test';
 
@@ -18,7 +17,7 @@ router.post('/add_pic', function(req, res, next) {
         var time = Math.round(new Date().getTime() / 1000);
         var newName = time+"."+extention;
         var image = {
-            image: newName
+            name: newName
         };
         file.mv("../public/uploads/images/" +newName,function (err) {
             if(err){
@@ -40,7 +39,7 @@ router.post('/add_pic', function(req, res, next) {
                     error:false
                 });
             }
-        })
+        });
     }
 });
 

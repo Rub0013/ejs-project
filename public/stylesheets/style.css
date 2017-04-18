@@ -64,6 +64,26 @@ a:link, a:visited, a:hover, a:active {
   margin-top: 10px;
   float: right;
 }
+#gallery{
+  width: 70%;
+  justify-content: space-between;
+}
+#gallery>div
+{
+  width: 300px;
+  margin-right: 10px;
+  position: relative;
+}
+#gallery img{
+  width:100%;
+  border: 2px solid rgba(16,160,133,0.8);
+}
+.delete_pic{
+  position: absolute;
+  top: 3%;
+  right: 3%;
+}
+
 
 
 
